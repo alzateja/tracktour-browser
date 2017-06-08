@@ -1,0 +1,19 @@
+
+
+{{#each wishlists as |wish|}}
+
+//console.log(wish)
+<tr data-id={{wish.id}}>
+  <td id='title-{{wish.id}}'>{{wish.artist.artist_name}}</td>
+  <td id='status-{{wish.id}}'>{{wish.wish_status}}</td>
+  <td><button type="button" id='modify-{{wish.id}}' class='modify-button'>
+    Modify
+  </button></td>
+  <td><button type="button" id='delete-{{wish.id}}' class='delete-button'>
+    Delete
+  </button></td>
+  <td>Coming Soon</td>
+  <td>Coming Soon</td>
+</tr>
+
+{{/each}}
