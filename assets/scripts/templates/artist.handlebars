@@ -1,0 +1,6 @@
+
+{{#each artists as |artist|}}
+
+<input class="artist-radio" type="radio" data-id={{artist.id}} name="selected-artist" value="{{artist.artist_name}}">{{artist.artist_name}}</input>
+
+{{/each}}
