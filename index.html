@@ -13,7 +13,8 @@
     </head>
     <body class="container-fluid">
 
-        <div class='launch-page'>
+<!-- 1.  HEADER JUMBOTRON-->
+
           <div class="jumbotron">
             <h1>TrackTour</h1>
             <h3>Track your shows and find artists near you</h3>
@@ -22,9 +23,13 @@
             <a class="btn btn-warning btn-lg jumbotron-button hide-on-initial-load" id="jumbo-changepass-but" href="#" role="button" >Change Password</a>
             <a class="btn btn-danger btn-lg jumbotron-button hide-on-initial-load" id="sign-out" href="#" role="button">Sign Out</a>
           </div>
-          <!-- <div class="loader">
+
+<!-- 2. LAUNCH PAGE - SIGN IN and SIGN UP -->
+<div class='launch-page'>
+          <div class="loader">
                 <img src="https://www.createwebsite.net/wp-content/uploads/2015/09/GD.gif"></img>
-          </div> -->
+          </div>
+ <!-- 2.a Sign Up form -->
             <form id="sign-up" class="form-horizontal">
           <div class="form-group">
               <label for="signUpInputEmail" class="col-sm-2 control-label">Email address</label>
@@ -52,15 +57,13 @@
                 <span id="signup-failure-message">Hell if I know! You are a rare bread!</span>
             </div>
           <div class="col-sm-offset-2 col-sm-10">
-
-            <!-- <p class="help-block">Example block-level help text here.</p> -->
             <button type="submit" class="btn btn-default">Sign Up</button>
-            <!-- <input type="submit" class="btn btn-default" name="submit" value="Sign up"> -->
           </div>
         </div>
           </form>
+ <!-- End 2.a Sign Up form -->
 
-
+ <!-- 2.b Sign In form -->
           <form id="sign-in" class="form-horizontal">
         <div class="form-group">
             <label for="signInInputEmail" class="col-sm-2 control-label">Email address</label>
@@ -82,17 +85,22 @@
                 <span class="sr-only">Uh oh!:</span>
                 <span id="signin-failure-message">Hell if I know! You are a rare bread!</span>
             </div>
-           <!-- <p class="help-block">Example block-level help text here.</p> -->
           <button type="submit" class="btn btn-default">Sign In</button>
-          <!-- <input type="submit" class="btn btn-default" name="submit" value="Sign in"> -->
         </div>
       </div>
         </form>
+ <!-- End 2.b Sign In form -->
+
+
+
 
     </div>
+<!-- END 2. LAUNCH PAGE - SIGN IN and SIGN UP -->
 
+<!-- 3. SIGN IN SCREEN -->
     <div class="hide-on-initial-load">
 
+<!-- 3.a. Change Password Form -->
     <form id="change-password" class="form-horizontal">
     <div class="form-group">
       <label for="changePasswordInputOldPassword" class="col-sm-2 control-label">Old Password</label>
@@ -113,28 +121,109 @@
           <span class="sr-only">Uh oh!:</span>
           <span id="change-pass-failure-message">Hell if I know! You are a rare bread!</span>
       </div>
-     <!-- <p class="help-block">Example block-level help text here.</p> -->
     <button type="submit" class="btn btn-default ">Change Password</button>
-    <!-- <input type="submit" class="btn btn-default" name="submit" value="Sign in"> -->
     </div>
     </div>
     </form>
+<!-- End 3.a. Change Password Form -->
+
+<div class="center-button col-xs-12"><button id="add-wishlist-item" class="btn btn-primary btn-lg jumbotron-button">Add Artist to your Wishlist</button></div>
+
+<!-- 3.b. Add Wish Form-->
+    <form id="add-wish" class="hide-on-sign-in col-sm-6" >
+    <div class="form-group">
+      <label for="addWishArtistID">Artist ID</label>
+      <p id="selected-artist-id-wishlist"> </p>
+      <label for="addWishTitle">Artist Selected</label>
+      <p id="selected-artist-wishlist"> </p>
+      <button type="button" class="btn btn-default" id="select-artist-button">Select Artist</button>
+    </div>
+     <label for="addWishStatus">Add Initial Wish Status</label>
+    <div class="form-group">
+
+        <div class="btn-group">
+            <button class="btn btn-default dropdown-toggle" type="button" id="wishlist-status-select" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Not Yet!<span class="caret"></span></button>
+            <ul class="dropdown-menu" aria-labelledby="wishlist-status-select">
+              <li><a href="#" class="status-select">Not Yet!</a></li>
+              <li><a href="#"  class="status-select">Have Seen!</a></li>
+            </ul>
+          </div>
+      </div>
+    <div id="add-wish-failure-alert" class="alert alert-danger hide-on-initial-load add-wish-alert" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign " aria-hidden="true"></span>
+        <span class="sr-only">Uh oh!:</span>
+        <span id="add-wish-failure-message">Please select a valid artist to add an entry!</span>
+    </div>
+    <div id="wish-already-exists-failure-alert" class="alert alert-danger hide-on-initial-load add-wish-alert" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign " aria-hidden="true"></span>
+        <span class="sr-only">Uh oh!:</span>
+        <span id="add-wish-failure-message">This wish already exists!</span>
+    </div>
+     <!-- <p class="help-block">Example block-level help text here.</p> -->
+    <button type="submit" class="btn btn-default ">Add This Artist to Your List</button>
+    </form>
+
+<!-- End 3.b. Add Wish Form-->
 
 
 
-    <div class="col-sm-offset-2 col-sm-10 artist-space">
-      <h2>Search for your artist's here</h2>
+<!-- 3.c. Select Artist Form and Space-->
 
+<div class="col-sm-6 artist-select-space">
+  <h3>Artist Selection</h3>
+
+  <div class="artist-selection-list">
+
+  </div>
+<input type="radio" name="selected-artist" value= "other">Other</input>
+<div class="form-group">
+<label for="addArtist">Add new Artist</label>
+<input type="text" class="form-control" name="artist[artist_name]" id="add-artist-name" placeholder="Whose the artist">
+</div>
+<button type="submit" class="btn btn-default" id="add-artist">Add Artist</button>
+<button type="submit" class="btn btn-default" id="close-artist">Close Artist</button>
+
+<div id="none-selected" class="alert bg-danger hide-on-initial-load none-selected-alert " role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign " aria-hidden="true"></span>
+    <span id="none-selected-failure-message">Sorry! You have not selected anyone</span>
+</div>
+<div id="blank-add-artist" class="alert bg-danger hide-on-initial-load blank-add-artists-alert " role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign " aria-hidden="true"></span>
+    <span id="blank-add-failure-message">Sorry! You put in a blank in the add artist field</span>
+</div>
+
+        </div>
+</div>
+
+
+<!-- End 3.c. Select Artist Form-->
+
+
+
+    <div class="col-sm-10 wishlist-space hide-on-initial-load">
+
+      <h2>Here is your artist wish list</h2>
 
       <div id="no-artists-alert" class="alert bg-warning hide-on-initial-load no-artists-alert " role="alert">
           <span class="glyphicon glyphicon-exclamation-sign " aria-hidden="true"></span>
-          <span id="signin-failure-message">Add some artists, to start balling!</span>
+          <span>Add some artists to begin tracking!</span>
       </div>
-    </div>
+
+
+      <table id='display-wishes'>
+        <tr class="table-header">
+          <td>Artist</td>
+          <td>Seen</td>
+          <td>Toggle Seen</td>
+          <td>Delete</td>
+          <td>Add Concert</td>
+          <td>Seen Count</td>
+        </tr>
+
+      </table>
 
 
 
             </div>
-
-        </body>
+    </body>
 </html>

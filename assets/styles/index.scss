@@ -1,2 +1,35 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+
+
+table {
+  width:100%;
+  border: 1px solid black;
+  margin: 30px auto 0;
+}
+
+td{
+  width:15%;
+  border: 1px solid black;
+  text-align: center;
+  height: 40px;
+}
+
+.table-header {
+  font-weight: bold;
+  background-color: Cyan;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+.center-button{
+  text-align: center;
+}
+
+.artist-radio{
+  margin: 5px;
+  padding: 5px;
+}
