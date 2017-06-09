@@ -25,11 +25,10 @@ this artist.
 
 What tables will you need? What will the columns on the table be?
 
-Concert {
+wishlist {
 Artist_id: ,
 user_id: ,
 status: ,
-last_seen
 }
 
 
@@ -66,7 +65,7 @@ What routes will you need to be able to make the proper request to your API?
 
 Do you plan to use any, if so what are they?
 
-Songkick
+Songkick, but I was unable to get an API key in time
 
 ## Wireframes
 
@@ -92,7 +91,7 @@ helps to go in with a plan.
 
 ## Link to Live application
 
-
+https://alzateja.github.io/tracktour-browser/
 
 ## Link to Rails API github
 

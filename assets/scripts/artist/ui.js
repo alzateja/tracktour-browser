@@ -4,8 +4,8 @@ const store = require('../store')
 const showArtists = require('../templates/artist.handlebars')
 
 const getArtistsSuccess = (data) => {
-  console.log('Get goals was successful')
-  console.log('Your data looks likes', data)
+  // console.log('Get goals was successful')
+  // console.log('Your data looks likes', data)
 
   store.artists = data.artists
   let artistList = data.artists
@@ -13,8 +13,8 @@ const getArtistsSuccess = (data) => {
 }
 
 const addArtistSuccess = (data) => {
-  console.log('Create goal was successful')
-  console.log('Your data looks likes', data)
+  // console.log('Create goal was successful')
+  // console.log('Your data looks likes', data)
   setArtistOnCreateWishlist(data.artist.artist_name, data.artist.id)
   cancelSetArtist()
 }
@@ -32,7 +32,7 @@ const cancelSetArtist = function (artist) {
 }
 
 const failure = function (error) {
-  console.log("That didn't work...", error)
+  // console.log("That didn't work...", error)
 }
 
 module.exports = {

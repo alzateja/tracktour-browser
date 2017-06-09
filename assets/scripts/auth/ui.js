@@ -19,7 +19,7 @@ const signUpSuccess = (data) => {
 }
 
 const signUpFailure = (error) => {
-  console.log(error)
+  // console.log(error)
   $('#sign-up-failure-alert').show()
   $('#signup-failure-message').text('Oh No. Someone may already taken that email. Try Signing in')
   $('.loader').hide()
@@ -65,7 +65,7 @@ const changePasswordSuccess = (data) => {
 }
 
 const changePasswordFailure = (error) => {
-  console.log('Password was not succesfully changed', error)
+  // console.log('Password was not succesfully changed', error)
   $('#change-pass-failure-alert').show()
   $('#change-pass-failure-message').text('You were unable to change your password. Check your entries and try again')
   $('.loader').hide()

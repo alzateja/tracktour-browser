@@ -22,7 +22,7 @@ const onSignUp = function (event) {
 
 // Password Match Check
   if (data.credentials.password !== data.credentials.password_confirmation) {
-    // // console.log('Your passwords do not match')
+    // console.log('Your passwords do not match')
     $('#sign-up-failure-alert').show()
     $('#signup-failure-message').text('Oh No. Your passwords dont match')
 
@@ -45,7 +45,7 @@ const onSignUp = function (event) {
 // SIGNIN FUNTIONALITY LAUNCHED WHEN CLICKED IN MODAL___________________
 const onSignIn = function (event) {
   event.preventDefault()
-  // // console.log('Sign In run')
+  // console.log('Sign In run')
   $('.alert').hide()
   const data = getFormFields(this)
   // Criteria Check
@@ -67,7 +67,7 @@ const onSignIn = function (event) {
 // CHANGE PASSWORD FUNTIONALITY LAUNCHED WHEN CLICKED IN MODAL___________________
 const onChangePassword = function (event) {
   event.preventDefault()
-  // // console.log('Changing password run')
+  // console.log('Changing password run')
   const data = getFormFields(this)
   $('.alert').hide()
   if (
@@ -93,9 +93,9 @@ const onChangePassword = function (event) {
 const onSignOut = function (event) {
   event.preventDefault()
   $('.alert').hide()
-  // // console.log('Sign out run')
+  // console.log('Sign out run')
   if (store.user === undefined) {
-    // // console.log('Not signed In')
+    // console.log('Not signed In')
     return
   }
   api.signOut()

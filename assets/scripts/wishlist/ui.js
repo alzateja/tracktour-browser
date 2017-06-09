@@ -5,7 +5,7 @@ const showWishes = require('../templates/wish.handlebars')
 
 const getWishesSuccess = (data) => {
   store.wishlists = null
-  console.log('Your data looks likes', data)
+  // console.log('Your data looks likes', data)
   const dataForHandlebars = {}
   dataForHandlebars.wishlists = data.wishlists
 
@@ -23,23 +23,21 @@ const getWishesSuccess = (data) => {
 }
 
 const createWishSuccess = (data) => {
-  console.log('Create wish was successful')
-  console.log('Your data looks likes', data)
+  // console.log('Create wish was successful')
+  // console.log('Your data looks likes', data)
 }
 
 const updateWishSucess = function (data) {
   store.wishlists = null
-  $('#modify-target-record').text('')
-  $('#modify-goal').slideToggle()
 }
 
 const deleteWishSuccess = function () {
-  console.log('you deleted a goal...YAY...IGuess!')
+  // console.log('you deleted a goal...YAY...IGuess!')
 }
 
 const failure = function (error) {
-  console.log(error)
-  console.log("That didn't work...")
+  // console.log(error)
+  // console.log("That didn't work...")
 }
 
 module.exports = {

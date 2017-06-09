@@ -17,7 +17,7 @@ const onSelectArtists = function () {
 const onSelectArtist = function (event) {
   event.preventDefault()
   $('.alert').hide()
-  console.log($('#add-artist-name').val())
+  // console.log($('#add-artist-name').val())
 
   let selected = $('input[name="selected-artist"]:checked').val()
   let selectedId = $('input[name="selected-artist"]:checked').data('id')

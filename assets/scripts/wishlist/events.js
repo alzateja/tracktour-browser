@@ -17,7 +17,7 @@ const onCreateWish = function (event) {
   let artistId = $('#selected-artist-id-wishlist').text()
 
   if (artistId === null || artistId === undefined || artistId === '' || artistId === ' ') {
-    console.log('Enter valid artist')
+    // console.log('Enter valid artist')
     $('#add-wish-failure-alert').show()
     return
   }
@@ -29,9 +29,9 @@ const onCreateWish = function (event) {
   data.wishlist.artist_id = artistId
 
   for (let i = 0; i < store.wishlists.length; i++) {
-    console.log('what is the store list' + store.wishlists[i].artist.id)
+    // console.log('what is the store list' + store.wishlists[i].artist.id)
     if (store.wishlists[i].artist.id.toString() === artistId) {
-      console.log('Entry Already exists')
+      // console.log('Entry Already exists')
       $('#wish-already-exists-failure-alert').show()
 
       return
@@ -70,7 +70,7 @@ const toggleWishStatus = function (event) {
     data.wishlist.wish_status = 'Not Yet!'
   }
 
-  console.log(data)
+  // console.log(data)
   api.updateWish(data)
       .then(ui.updateWishSucess)
       .then(onGetWishes)
@@ -87,6 +87,7 @@ const wishStatusSetState = function (event) {
 const resetAddWishList = function () {
   $('.alert').hide()
   $('#add-wish').slideToggle()
+
   $('#selected-artist-wishlist').text('')
   $('#selected-artist-id-wishlist').text('')
   $('.artist-select-space').hide()

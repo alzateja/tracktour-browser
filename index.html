@@ -6,6 +6,7 @@
 
       <!-- Do not add `link` tags unless you know what you are doing -->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
       <!-- Do not add `script` tags unless you know what you are doing -->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -30,7 +31,8 @@
                 <img src="https://www.createwebsite.net/wp-content/uploads/2015/09/GD.gif"></img>
           </div>
  <!-- 2.a Sign Up form -->
-            <form id="sign-up" class="form-horizontal">
+            <div class = "background-grey container-fluid">
+            <form id="sign-up" class="form-horizontal initial-forms">
           <div class="form-group">
               <label for="signUpInputEmail" class="col-sm-2 control-label">Email address</label>
               <div class="col-sm-10">
@@ -61,10 +63,11 @@
           </div>
         </div>
           </form>
+
  <!-- End 2.a Sign Up form -->
 
  <!-- 2.b Sign In form -->
-          <form id="sign-in" class="form-horizontal">
+          <form id="sign-in" class="form-horizontal initial-forms">
         <div class="form-group">
             <label for="signInInputEmail" class="col-sm-2 control-label">Email address</label>
             <div class="col-sm-10">
@@ -91,14 +94,14 @@
         </form>
  <!-- End 2.b Sign In form -->
 
-
+<img src="https://images4.alphacoders.com/457/thumb-1920-4574.jpg" class="hide-on-sign-in"/>
 
 
     </div>
 <!-- END 2. LAUNCH PAGE - SIGN IN and SIGN UP -->
 
 <!-- 3. SIGN IN SCREEN -->
-    <div class="hide-on-initial-load">
+    <div class="hide-on-initial-load main-screen">
 
 <!-- 3.a. Change Password Form -->
     <form id="change-password" class="form-horizontal">
@@ -127,10 +130,12 @@
     </form>
 <!-- End 3.a. Change Password Form -->
 
-<div class="center-button col-xs-12"><button id="add-wishlist-item" class="btn btn-primary btn-lg jumbotron-button">Add Artist to your Wishlist</button></div>
+<div class="center-button col-xs-12"><button id="add-wishlist-item" class="btn btn-primary btn-lg jumbotron-button">Open/Close Form To Add Artists</button></div>
 
+<div class="col-sm-12 full">
 <!-- 3.b. Add Wish Form-->
-    <form id="add-wish" class="hide-on-sign-in col-sm-6" >
+    <form id="add-wish" class="hide-on-sign-in col-sm-6 half-form" >
+      <h4>Add Wish List</h4>
     <div class="form-group">
       <label for="addWishArtistID">Artist ID</label>
       <p id="selected-artist-id-wishlist"> </p>
@@ -169,15 +174,15 @@
 
 <!-- 3.c. Select Artist Form and Space-->
 
-<div class="col-sm-6 artist-select-space">
-  <h3>Artist Selection</h3>
+<div class="col-sm-6 artist-select-space half-form">
+  <h4>Artist Selection</h4>
 
   <div class="artist-selection-list">
 
   </div>
-<input type="radio" name="selected-artist" value= "other">Other</input>
+<input type="radio" name="selected-artist" value= "other" >Other</input>
 <div class="form-group">
-<label for="addArtist">Add new Artist</label>
+<label for="addArtist" id="add-artist-label">Add new Artist</label>
 <input type="text" class="form-control" name="artist[artist_name]" id="add-artist-name" placeholder="Whose the artist">
 </div>
 <button type="submit" class="btn btn-default" id="add-artist">Add Artist</button>
@@ -194,15 +199,15 @@
 
         </div>
 </div>
-
+</div>
 
 <!-- End 3.c. Select Artist Form-->
 
 
 
-    <div class="col-sm-10 wishlist-space hide-on-initial-load">
+    <div class="col-sm-12 wishlist-space hide-on-initial-load">
 
-      <h2>Here is your artist wish list</h2>
+      <h2 class="center-object">Here is your artist wish list</h2>
 
       <div id="no-artists-alert" class="alert bg-warning hide-on-initial-load no-artists-alert " role="alert">
           <span class="glyphicon glyphicon-exclamation-sign " aria-hidden="true"></span>
@@ -225,5 +230,6 @@
 
 
             </div>
+          </div>
     </body>
 </html>

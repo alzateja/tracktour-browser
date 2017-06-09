@@ -18,18 +18,79 @@ td{
 
 .table-header {
   font-weight: bold;
-  background-color: Cyan;
+  background-color: rgba(55, 130, 128, 1);
+  color: white;
 }
 
 .jumbotron {
   text-align: center;
+  background-color: rgba(55, 60, 130,1);
+  color:white;
 }
 
 .center-button{
   text-align: center;
+  margin-bottom: 30px;
 }
 
-.artist-radio{
-  margin: 5px;
-  padding: 5px;
+// .select-space{
+//   margin-right: 30px;
+//
+// }
+
+body{
+  background-image: url('http://www.freepptbackgrounds.net/wp-content/uploads/2014/10/Music-Notes-PPT-Backgrounds.jpg');
+  font-family: 'Raleway', sans-serif;
+}
+
+
+img {
+  margin-top: 30px;
+  height: 50%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.half-form {
+  border: 1px solid black;
+  padding: 20px;
+  background-color: white;
+}
+
+#add-artist-label {
+  padding: 10px 0;
+}
+
+form{
+  background-color: white;
+}
+input[type="radio"] {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.wishlist-space{
+    background-color: white;
+    margin: 0 auto;
+}
+// .main-screen {
+//
+//   background-size: contain;
+// }
+//
+
+.center-object {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.initial-forms {
+  padding-top: 30px;
+  margin-top: -30px;
+  padding-bottom: 25px;
+  background-color: rgba(72,111,250, .8);
+  color: black;
+}
+.initial-forms input{
+  width: 30%;
 }
