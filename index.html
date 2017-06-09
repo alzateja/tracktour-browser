@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>TrackTour</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags unless you know what you are doing -->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+      <!-- Do not add `script` tags unless you know what you are doing -->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+
+<!-- 1.  HEADER JUMBOTRON-->
+
+          <div class="jumbotron">
+            <h1>TrackTour</h1>
+            <h3>Track your shows and find artists near you</h3>
+            <a class="btn btn-info btn-lg jumbotron-button hide-on-sign-in" id="jumbo-signup-but" href="#" role="button" >Sign Up</a>
+            <a class="btn btn-primary btn-lg jumbotron-button hide-on-sign-in" id="jumbo-signin-but" href="#" role="button">Sign In</a>
+            <a class="btn btn-warning btn-lg jumbotron-button hide-on-initial-load" id="jumbo-changepass-but" href="#" role="button" >Change Password</a>
+            <a class="btn btn-danger btn-lg jumbotron-button hide-on-initial-load" id="sign-out" href="#" role="button">Sign Out</a>
+          </div>
+
+<!-- 2. LAUNCH PAGE - SIGN IN and SIGN UP -->
+<div class='launch-page'>
+          <div class="loader">
+                <img src="https://www.createwebsite.net/wp-content/uploads/2015/09/GD.gif"></img>
+          </div>
+ <!-- 2.a Sign Up form -->
+            <div class = "background-grey container-fluid">
+            <form id="sign-up" class="form-horizontal initial-forms">
+          <div class="form-group">
+              <label for="signUpInputEmail" class="col-sm-2 control-label">Email address</label>
+              <div class="col-sm-10">
+              <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Username should be in the following format: example@email.com"
+              name="credentials[email]" id="sign-up-email" placeholder="Email">
+            </div>
+            </div>
+            <div class="form-group">
+              <label for="signUpInputPassword" class="col-sm-2 control-label">Password</label>
+              <div class="col-sm-10">
+              <input type="password" name="credentials[password]" id="sign-up-password" placeholder="Password">
+            </div>
+            </div>
+            <div class="form-group">
+              <label for="signUpInputPasswordConfirm" class="col-sm-2 control-label">Password Confirmation</label>
+              <div class="col-sm-10">
+              <input type="password" name="credentials[password_confirmation]" id="sign-up-password-confirmation" placeholder="Password Confirmation">
+            </div>
+          </div>
+          <div class="form-group">
+            <div id="sign-up-failure-alert" class="alert alert-danger signup-alert hide-on-initial-load" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign " aria-hidden="true"></span>
+                <span class="sr-only">Uh oh!:</span>
+                <span id="signup-failure-message">Hell if I know! You are a rare bread!</span>
+            </div>
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Sign Up</button>
+          </div>
+        </div>
+          </form>
+
+ <!-- End 2.a Sign Up form -->
+
+ <!-- 2.b Sign In form -->
+          <form id="sign-in" class="form-horizontal initial-forms">
+        <div class="form-group">
+            <label for="signInInputEmail" class="col-sm-2 control-label">Email address</label>
+            <div class="col-sm-10">
+            <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Username should be in the following format: example@email.com"
+            name="credentials[email]" id="sign-in-email" placeholder="Email">
+          </div>
+        </div>
+          <div class="form-group">
+            <label for="signInInputPassword" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+            <input type="password" name="credentials[password]" id="sign-in-password" placeholder="Password">
+            </div>
+          </div>
+          <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <div id="sign-in-failure-alert" class="alert alert-danger hide-on-initial-load signin-alert " role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign " aria-hidden="true"></span>
+                <span class="sr-only">Uh oh!:</span>
+                <span id="signin-failure-message">Hell if I know! You are a rare bread!</span>
+            </div>
+          <button type="submit" class="btn btn-default">Sign In</button>
+        </div>
+      </div>
+        </form>
+ <!-- End 2.b Sign In form -->
+
+<img src="https://images4.alphacoders.com/457/thumb-1920-4574.jpg" class="hide-on-sign-in"/>
+
+
+    </div>
+<!-- END 2. LAUNCH PAGE - SIGN IN and SIGN UP -->
+
+<!-- 3. SIGN IN SCREEN -->
+    <div class="hide-on-initial-load main-screen">
+
+<!-- 3.a. Change Password Form -->
+    <form id="change-password" class="form-horizontal">
+    <div class="form-group">
+      <label for="changePasswordInputOldPassword" class="col-sm-2 control-label">Old Password</label>
+      <div class="col-sm-10">
+      <input type="password" name="passwords[old]" id="change-password-old" placeholder="Old Password">
+    </div>
+    </div>
+    <div class="form-group">
+      <label for="changePasswordInputNewPassword" class="col-sm-2 control-label">New Password</label>
+      <div class="col-sm-10">
+      <input type="password" name="passwords[new]" id="change-password-new" placeholder="New Password">
+      </div>
+    </div>
+    <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div id="change-pass-failure-alert" class="alert alert-danger hide-on-initial-loadchange-pass-alert" role="alert">
+          <span class="glyphicon glyphicon-exclamation-sign " aria-hidden="true"></span>
+          <span class="sr-only">Uh oh!:</span>
+          <span id="change-pass-failure-message">Hell if I know! You are a rare bread!</span>
+      </div>
+    <button type="submit" class="btn btn-default ">Change Password</button>
+    </div>
+    </div>
+    </form>
+<!-- End 3.a. Change Password Form -->
+
+<div class="center-button col-xs-12"><button id="add-wishlist-item" class="btn btn-primary btn-lg jumbotron-button">Open/Close Form To Add Artists</button></div>
+
+<div class="col-sm-12 full">
+<!-- 3.b. Add Wish Form-->
+    <form id="add-wish" class="hide-on-sign-in col-sm-6 half-form" >
+      <h4>Add Wish List</h4>
+    <div class="form-group">
+      <label for="addWishArtistID">Artist ID</label>
+      <p id="selected-artist-id-wishlist"> </p>
+      <label for="addWishTitle">Artist Selected</label>
+      <p id="selected-artist-wishlist"> </p>
+      <button type="button" class="btn btn-default" id="select-artist-button">Select Artist</button>
+    </div>
+     <label for="addWishStatus">Add Initial Wish Status</label>
+    <div class="form-group">
+
+        <div class="btn-group">
+            <button class="btn btn-default dropdown-toggle" type="button" id="wishlist-status-select" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Not Yet!<span class="caret"></span></button>
+            <ul class="dropdown-menu" aria-labelledby="wishlist-status-select">
+              <li><a href="#" class="status-select">Not Yet!</a></li>
+              <li><a href="#"  class="status-select">Have Seen!</a></li>
+            </ul>
+          </div>
+      </div>
+    <div id="add-wish-failure-alert" class="alert alert-danger hide-on-initial-load add-wish-alert" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign " aria-hidden="true"></span>
+        <span class="sr-only">Uh oh!:</span>
+        <span id="add-wish-failure-message">Please select a valid artist to add an entry!</span>
+    </div>
+    <div id="wish-already-exists-failure-alert" class="alert alert-danger hide-on-initial-load add-wish-alert" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign " aria-hidden="true"></span>
+        <span class="sr-only">Uh oh!:</span>
+        <span id="add-wish-failure-message">This wish already exists!</span>
+    </div>
+     <!-- <p class="help-block">Example block-level help text here.</p> -->
+    <button type="submit" class="btn btn-default ">Add This Artist to Your List</button>
+    </form>
+
+<!-- End 3.b. Add Wish Form-->
+
+
+
+<!-- 3.c. Select Artist Form and Space-->
+
+<div class="col-sm-6 artist-select-space half-form">
+  <h4>Artist Selection</h4>
+
+  <div class="artist-selection-list">
+
+  </div>
+<input type="radio" name="selected-artist" value= "other" >Other</input>
+<div class="form-group">
+<label for="addArtist" id="add-artist-label">Add new Artist</label>
+<input type="text" class="form-control" name="artist[artist_name]" id="add-artist-name" placeholder="Whose the artist">
+</div>
+<button type="submit" class="btn btn-default" id="add-artist">Add Artist</button>
+<button type="submit" class="btn btn-default" id="close-artist">Close Artist</button>
+
+<div id="none-selected" class="alert bg-danger hide-on-initial-load none-selected-alert " role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign " aria-hidden="true"></span>
+    <span id="none-selected-failure-message">Sorry! You have not selected anyone</span>
+</div>
+<div id="blank-add-artist" class="alert bg-danger hide-on-initial-load blank-add-artists-alert " role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign " aria-hidden="true"></span>
+    <span id="blank-add-failure-message">Sorry! You put in a blank in the add artist field</span>
+</div>
+
+        </div>
+</div>
+</div>
+
+<!-- End 3.c. Select Artist Form-->
+
+
+
+    <div class="col-sm-12 wishlist-space hide-on-initial-load">
+
+      <h2 class="center-object">Here is your artist wish list</h2>
+
+      <div id="no-artists-alert" class="alert bg-warning hide-on-initial-load no-artists-alert " role="alert">
+          <span class="glyphicon glyphicon-exclamation-sign " aria-hidden="true"></span>
+          <span>Add some artists to begin tracking!</span>
+      </div>
+
+
+      <table id='display-wishes'>
+        <tr class="table-header">
+          <td>Artist</td>
+          <td>Seen</td>
+          <td>Toggle Seen</td>
+          <td>Delete</td>
+          <td>Add Concert</td>
+          <td>Seen Count</td>
+        </tr>
+
+      </table>
+
+
+
+            </div>
+          </div>
+    </body>
+</html>
