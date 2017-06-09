@@ -1,7 +1,7 @@
 'use strict'
 
 const store = require('../store')
-// const artists = require('../artists/events')
+const wishlistEvents = require('../wishlist/events')
 
 const resetUserForms = function () {
   $('.alert').hide()
@@ -35,6 +35,7 @@ const signInSuccess = (data) => {
   $('.alert').hide()
   $('.loader').hide()
   resetUserForms()
+  wishlistEvents.onGetWishes()
 }
 
 const signInFailure = (error) => {
